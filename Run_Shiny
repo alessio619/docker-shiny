@@ -1,0 +1,6 @@
+# Launch container with embedded Shiny App
+docker run --rm -p 3838:3838 \
+    -e USER="Vlad" -e PASSWORD="guest" \
+    -v /Users/vladdsm/Shiny/:/srv/shiny-server/ \
+    -v /Users/vladdsm/ShinyLog/:/var/log/shiny-server/ \
+    vladdsm/docker-shiny
