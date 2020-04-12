@@ -10,7 +10,10 @@ RUN mkdir -p /02_code
 RUN mkdir -p /03_output
 
 ## copy files
+# Additional packages
 COPY 02_code/install_packages.R /install_packages.R
+# Shiny App files
+
 
 ## install packages 
 RUN Rscript /install_packages.R

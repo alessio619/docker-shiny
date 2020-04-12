@@ -1,6 +1,4 @@
 # code to install packages in the docker file
-install.packages("tidyverse")
-install.packages("lubridate")
 install.packages("ReinforcementLearning")
 install.packages("magrittr")
 install.packages("plotly")
@@ -30,5 +28,5 @@ if (! (pkg %in% rownames(installed.packages()))) { install.packages(pkg) }
 }
 
 # Now we download, install and initialize the H2O package for R.
-install.packages("h2o", type="source", repos="http://h2o-release.s3.amazonaws.com/h2o/rel-yates/4/R")
+install.packages("h2o", type="source", repos="http://h2o-release.s3.amazonaws.com/h2o/rel-zahradnik/1/R")
 
