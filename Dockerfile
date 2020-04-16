@@ -1,6 +1,6 @@
 # building customised docker image to use R Shiny Server
 
-FROM rocker/shiny-verse:latest
+FROM rocker/shiny:latest
 
 LABEL maintainer='vladimir.zhbanko@gmail.com'
 
@@ -12,11 +12,22 @@ RUN mkdir -p /03_output
 ## copy files
 # Additional packages
 COPY 02_code/install_packages.R /install_packages.R
-# Shiny App files
-
+# Copy Shiny App files to the image
+COPY app.R /srv/shiny-server/
+#COPY R /srv/shiny-server/R
+#COPY data /srv/shiny-server/data
 
 ## install packages 
 RUN Rscript /install_packages.R
+
+# select port
+EXPOSE 3838
+
+# allow permission
+RUN sudo chown -R shiny:shiny /srv/shiny-server
+
+# run app
+CMD ["/usr/bin/shiny-server.sh"]
 
 #to run shiny server with demo capabilities
 #docker run --rm -v /Users/vladdsm/shinyapps/:/srv/shiny-server -v /Users/vladdsm/shinylog/:/var/log/shiny-server -p 3838:3838 vladdsm/docker-shiny
