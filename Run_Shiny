@@ -1,17 +1,17 @@
 # Launch container with embedded Shiny App
 
 # This stack will launch apps available in the mapped folder
-docker run --rm -p 3838:3838 \
-    -e USER="owner" -e PASSWORD="guest" \
-    -v /Users/vladdsm/shinyapps/:/srv/shiny-server/ \
-    -v /Users/vladdsm/shinylog/:/var/log/shiny-server/ \
-    vladdsm/docker-shiny
+#docker run --rm -p 3838:3838 \
+#    -e USER="owner" -e PASSWORD="guest" \
+#    -v /Users/vladdsm/shinyapps/:/srv/shiny-server/ \
+#    -v /Users/vladdsm/shinylog/:/var/log/shiny-server/ \
+#    vladdsm/docker-shiny
 # access using http://0.0.0.0:3838/test/ , assumed app is stored in the folder `/Users/vladdsm/shinyapps/test/app.R`
 
 # This stack will run the app available in the image itself
-#docker run --rm -p 3838:3838 \
-#    -v /Users/vladdsm/shinylog/:/var/log/shiny-server/ \
-#    vladdsm/docker-shiny
+docker run --rm -p 3838:3838 \
+    -v /Users/vladdsm/shinylog/:/var/log/shiny-server/ \
+    vladdsm/docker-shiny
 # access using 0.0.0.0:3838
 
 # check application log by checking a folder `shinylog` mapped to the local machine
