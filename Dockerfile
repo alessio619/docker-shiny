@@ -13,7 +13,7 @@ RUN mkdir -p /03_output
 # Additional packages
 COPY 02_code/install_packages.R /install_packages.R
 # Copy Shiny App files to the image
-COPY app.R /srv/shiny-server/
+COPY R/app.R /srv/shiny-server/
 #COPY R /srv/shiny-server/R
 #COPY data /srv/shiny-server/data
 
