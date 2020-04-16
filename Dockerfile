@@ -24,7 +24,11 @@ RUN Rscript /install_packages.R
 EXPOSE 3838
 
 # allow permission
-RUN sudo chown -R shiny:shiny /srv/shiny-server
+#RUN sudo chown -R shiny:shiny /srv/shiny-server
+
+# Add shiny user
+RUN groupadd  owner \
+&& useradd --gid owner --shell /bin/bash --create-home owner
 
 # run app
 CMD ["/usr/bin/shiny-server.sh"]

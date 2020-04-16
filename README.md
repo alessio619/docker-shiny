@@ -4,6 +4,13 @@
 
 Repository to test Shiny App in docker container. This repository is created for investigation/educational purposes. Check out more in this [Udemy Course](https://www.udemy.com/course/docker-containers-data-science-reproducible-research/?referralCode=8CFCF7D8B36B99E28012)
 
+# TDL
+
+* Add user control to the server 
+* Add app to the folder in the shiny server
+* Explain option to run shiny app from the folder on local computer
+* Explain option to run shiny app with source code stored in the container
+
 # Contents
 
 Repository contains:
@@ -30,9 +37,14 @@ Use terminal to navigate to this directory and run the following code:
 1. Edit Executable script `Run_Shiny` by placing specific settings
 2. Run executable script...
 
+Alternatively execute this code in the terminal:
+
+`docker run --rm -p 3838:3838 vladdsm/docker-shiny`
+
 ## Test application
 
-Open the url: ...
+Open the url: 0.0.0.0:3838 to see the app
+Stop container by pressing `CTRL+C` in the active terminal window
 
 # Development notes:
 
