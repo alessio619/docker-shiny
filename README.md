@@ -10,6 +10,7 @@ Repository to test Shiny App in docker container. This repository is created for
 * Add app to the folder in the shiny server
 * Explain option to run shiny app from the folder on local computer
 * Explain option to run shiny app with source code stored in the container
+* Build shiny app as a package see https://www.r-bloggers.com/building-a-shiny-app-as-a-package/
 
 # Contents
 
