@@ -7,9 +7,6 @@ Repository to test Shiny App in docker container. This repository is created for
 # TDL
 
 * Add user control to the server 
-* Add app to the folder in the shiny server
-* Explain option to run shiny app from the folder on local computer
-* Explain option to run shiny app with source code stored in the container
 * Build shiny app as a package see https://www.r-bloggers.com/building-a-shiny-app-as-a-package/
 
 # Contents
@@ -19,13 +16,29 @@ Repository contains:
 1. Code for sample shiny application
 2. Auxiliary files
 3. Dockerfile that builds docker image
-4. Executable Script `Run_Shiny` to launch the container containing shiny server with demo shiny application
+4. Executable Script `Run_Shiny_Mapped` to launch the container containing shiny server with mapped folder on local computer. PURPOSE: Develop App
+5. Executable Script `Run_Shiny_Embedded` to launch the container containing shiny server with embedded demo shiny application. PURPOSE: Embed Apps for shipping into container
 
 # How to use
 
 ## Note about Dockerfile
 
 This Dockerfile is built on rocker/shiny image. Custom R packages are added on top. These packages are listed in the folder `02_code/install_packages.R`. 
+
+## Add your app to the folder
+
+It is possible to either map folder with locally stored shiny app or embed app into the image.
+
+### Embed app to the image
+
+Use the following lines in the Dockerfile to add your app:
+
+`# Copy Shiny App files to the image
+COPY testapp/app.R /srv/shiny-server/shinyapps/testapp/`
+
+### Map locally available app
+
+Change executable script `Run_Shiny_Mapped` to map local folder. Change code after key `-v ...:/srv/shiny-server/`
 
 ## Build this image
 
@@ -35,7 +48,7 @@ Use terminal to navigate to this directory and run the following code:
 
 ## Run the container
 
-1. Edit Executable script `Run_Shiny` by placing specific settings
+1. Edit Executable script `Run_Shiny_Embedded` or `Run_Shiny_Mapped` by placing specific settings
 2. Run executable script...
 
 Alternatively execute this code in the terminal:

@@ -12,13 +12,12 @@ RUN mkdir -p /03_output
 ## copy files
 # Additional packages
 COPY 02_code/install_packages.R /install_packages.R
+
 # Copy Shiny App files to the image
-COPY R/app.R /srv/shiny-server/
-#COPY R /srv/shiny-server/R
-#COPY data /srv/shiny-server/data
+COPY testapp/app.R /srv/shiny-server/shinyapps/testapp/
 
 ## install packages 
-RUN Rscript /install_packages.R
+#RUN Rscript /install_packages.R
 
 # select port
 EXPOSE 3838
