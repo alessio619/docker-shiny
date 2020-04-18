@@ -16,8 +16,11 @@ COPY 02_code/install_packages.R /install_packages.R
 # Copy Shiny App files to the image
 COPY testapp/app.R /srv/shiny-server/shinyapps/testapp/
 
+# Copy Other Apps if needed 
+# COPY testapp1/* /srv/shiny-server/shinyapps/testapp1/
+
 ## install packages 
-#RUN Rscript /install_packages.R
+RUN Rscript /install_packages.R
 
 # select port
 EXPOSE 3838
