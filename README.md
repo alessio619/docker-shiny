@@ -7,7 +7,12 @@ Repository to test Shiny App in docker container. This repository is created for
 # TDL
 
 * Add user control to the server 
-* Build shiny app as a package see https://www.r-bloggers.com/building-a-shiny-app-as-a-package/
+* Build shiny app as a package see https://www.r-bloggers.com/building-a-shiny-app-as-a-package/ and https://rtask.thinkr.fr/getting-started-with-golem/
+* Video tutorial: https://shinydevseries.com/post/golem-demo/
+* Example of the shiny app built with Golem: 
+* start container with app trackback: docker run --rm -d -p 80:80 --name TRP vladdsm/docker-trackpack
+* stop container with app: docker container stop TRP
+
 
 # Contents
 
