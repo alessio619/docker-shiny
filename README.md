@@ -12,6 +12,7 @@ Repository to test Shiny App in docker container. This repository is created for
 * Example of the shiny app built with Golem: 
 * start container with app trackback: docker run --rm -d -p 80:80 --name TRP vladdsm/docker-trackpack
 * stop container with app: docker container stop TRP
+* Securing credentials: https://stackoverflow.com/q/37552980
 
 
 # Contents
